@@ -8,5 +8,6 @@
 }
 
 body {
+  background: var(--color-light-bright);
   font-family: Oswald, sans-serif;
 }
