@@ -11,4 +11,7 @@
   display: block;
   width: 100%;
   height: 150px;
+  padding: 7px;
+  background: var(--color-light-monochrome);
+  border: 2px solid var(--color-dark);
 }
