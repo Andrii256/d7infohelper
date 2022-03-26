@@ -90,6 +90,9 @@
     <link rel="stylesheet" href="./styles/input.css" />
     <link rel="stylesheet" href="./styles/textaria.css" />
     <link rel="stylesheet" href="./styles/algorithm.css" />
+    <link rel="stylesheet" href="./styles/output.css" />
+    <link rel="stylesheet" href="./styles/nicknamesList.css" />
+    <link rel="stylesheet" href="./styles/button.css" />
   </head>
   <body class="body">
     <article class="top body__top">
@@ -187,6 +190,42 @@
           </label>
         </div>
       </form>
+    </article>
+
+    <hr style="max-width: 600px" />
+
+    <article class="output body__output">
+      <ul class="nicknamesList output__nicknamesList">
+        <li class="nicknamesList__nickname nicknamesList__nickname--active">
+          @an2sd2
+        </li>
+        <li class="nicknamesList__nickname">@sodfisdf</li>
+        <li class="nicknamesList__nickname">@fggdffg</li>
+        <li class="nicknamesList__nickname">@ertercvb</li>
+        <li class="nicknamesList__nickname">@9s0dpxv</li>
+      </ul>
+
+      <div class="textaria output__readyMessage">
+        <textarea
+          class="textaria__textaria"
+          name="accounts"
+          id="input-accounts"
+          cols="30"
+          rows="10"
+          placeholder="Нажми генерувати наступне, потім генерувати попереднє :)"
+        ></textarea>
+      </div>
+
+      <div class="output__buttons output__buttons--top">
+        <button class="button output__button">← Генерувати поп.</button>
+        <button class="button output__button">Генерувати наст. →</button>
+      </div>
+      <div class="output__buttons output__buttons--bottom">
+        <button class="button output__button">Копіювати</button>
+        <button class="button button--main output__button">
+          Копіювати і генерувати наступне
+        </button>
+      </div>
     </article>
 
     <script src="./scripts/howToUse.js"></script>

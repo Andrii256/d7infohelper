@@ -1,0 +1,27 @@
+.output {
+  padding: 0 20px;
+}
+
+.output__nicknamesList {
+  margin-bottom: 30px;
+}
+
+.output__readyMessage {
+  margin-bottom: 20px;
+}
+
+.output__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.output__buttons--top {
+  margin-bottom: 10px;
+}
+.output__buttons--bottom {
+}
+
+.output__button {
+  display: block;
+  margin: 0 5px;
+}

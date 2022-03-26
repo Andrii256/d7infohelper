@@ -1,0 +1,15 @@
+.nicknamesList {
+  padding: 0;
+  list-style: none;
+}
+
+.nicknamesList__nickname {
+  padding: 0;
+  margin: 4px 0;
+  border-bottom: 1px dashed;
+  border-top: 1px dashed;
+}
+
+.nicknamesList__nickname--active {
+background: #c5f1b6;
+}
