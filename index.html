@@ -89,6 +89,7 @@
     <link rel="stylesheet" href="./styles/howToUse.css" />
     <link rel="stylesheet" href="./styles/input.css" />
     <link rel="stylesheet" href="./styles/textaria.css" />
+    <link rel="stylesheet" href="./styles/algorithm.css" />
   </head>
   <body class="body">
     <article class="top body__top">
@@ -136,17 +137,56 @@
     </article>
 
     <article class="input body__input">
-      <div class="textaria input__textaria">
+      <div class="textaria input__accounts">
         <h2 class="textaria__title">Аккаунти:</h2>
         <textarea
           class="textaria__textaria"
           name="accounts"
-          id=""
+          id="input-accounts"
           cols="30"
           rows="10"
           placeholder="Встав список аккаунтів"
         ></textarea>
       </div>
+
+      <div class="textaria input__message">
+        <h2 class="textaria__title">Шаблон повідомлення:</h2>
+        <textarea
+          class="textaria__textaria"
+          name="message template"
+          id="input-rawMessage"
+          cols="30"
+          rows="10"
+          placeholder="Встав шаблон повідомлення"
+        ></textarea>
+      </div>
+
+      <form class="algorithm input__algorithm">
+        <h2 class="algorithm__title">Алгоритм:</h2>
+        <div class="algorithm__options">
+          <label for="algorithm-option-oneByOne" class="algorithm__option">
+            <input
+              class="algorithm__radio"
+              value="oneByOne"
+              checked
+              type="radio"
+              name="algorithm"
+              id="algorithm-option-oneByOne"
+            />
+            <span class="algorithm__value">По одному</span>
+          </label>
+          <label for="algorithm-option-bundle" class="algorithm__option">
+            <input
+              class="algorithm__radio"
+              value="bundle"
+              type="radio"
+              name="algorithm"
+              id="algorithm-option-bundle"
+            />
+            <span class="algorithm__value">Пачками</span>
+          </label>
+        </div>
+      </form>
     </article>
 
     <script src="./scripts/howToUse.js"></script>

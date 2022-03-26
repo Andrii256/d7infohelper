@@ -1,0 +1,39 @@
+.algorithm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.algorithm * {
+  margin: 0;
+}
+
+.algorithm__title {
+  display: block;
+  margin-right: 15px;
+  font-size: 1rem;
+}
+
+.algorithm__options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.algorithm__option {
+  display: block;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.algorithm__option:hover {
+  color: var(--color-dark-saturated);
+}
+
+.algorithm__radio {
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.algorithm__value {
+  font-size: 0.8rem;
+}
