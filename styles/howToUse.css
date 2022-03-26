@@ -1,0 +1,45 @@
+.howToUse {
+  padding: 0 20px;
+}
+
+.howToUse--opened {
+}
+
+.howToUse__toggler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background: none;
+  border: none;
+  color: var(--color-dark-saturated);
+  cursor: pointer;
+}
+.howToUse__toggler:hover {
+  text-decoration: underline;
+}
+
+.howToUse__icon {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 10px;
+}
+.howToUse--opened .howToUse__icon {
+  transform: rotate(180deg);
+}
+
+.howToUse__toggler-text {
+  font-size: 1rem;
+}
+
+.howToUse__content {
+  max-width: 600px;
+  margin: 10px auto;
+}
+.howToUse__content:not(.howToUse--opened .howToUse__content) {
+  display: none;
+}
+.howToUse__content a {
+  color: var(--color-dark-saturated);
+}
