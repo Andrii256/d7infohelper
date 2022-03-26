@@ -1,0 +1,12 @@
+@import url(https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oswald&display=swap);
+
+:root {
+  --color-light-bright: #f1ddb6;
+  --color-light-monochrome: #fff6e9;
+  --color-dark-saturated: #6e1c24;
+  --color-dark: #292929;
+}
+
+body {
+  font-family: Oswald, sans-serif;
+}
