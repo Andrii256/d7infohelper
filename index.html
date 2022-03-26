@@ -87,14 +87,18 @@
     <link rel="stylesheet" href="./styles/body.css" />
     <link rel="stylesheet" href="./styles/top.css" />
     <link rel="stylesheet" href="./styles/howToUse.css" />
+    <link rel="stylesheet" href="./styles/input.css" />
+    <link rel="stylesheet" href="./styles/textaria.css" />
   </head>
   <body class="body">
     <article class="top body__top">
-      <img
-        src="./media/logo.png"
-        alt="Демократична сокира Логотип"
-        class="top__logo"
-      />
+      <a href="https://sokyra.party/" target="_blank" class="top__logo-link">
+        <img
+          src="./media/logo.png"
+          alt="Демократична сокира Логотип"
+          class="top__logo"
+        />
+      </a>
       <h1 class="top__title">Інфо-Допомагайка</h1>
     </article>
 
@@ -129,6 +133,20 @@
         <br />
         Разом до перемоги! Слава Україні!
       </p>
+    </article>
+
+    <article class="input body__input">
+      <div class="textaria input__textaria">
+        <h2 class="textaria__title">Аккаунти:</h2>
+        <textarea
+          class="textaria__textaria"
+          name="accounts"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Встав список аккаунтів"
+        ></textarea>
+      </div>
     </article>
 
     <script src="./scripts/howToUse.js"></script>

@@ -1,0 +1,14 @@
+.textaria {
+  width: 100%;
+}
+
+.textaria__title {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.textaria__textaria {
+  display: block;
+  width: 100%;
+  height: 150px;
+}
