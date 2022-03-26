@@ -1,0 +1,17 @@
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top__logo {
+  display: block;
+  object-fit: contain;
+  height: 22vh;
+  margin-bottom: 2vh;
+}
+
+.top__title {
+  color: var(--color-dark-saturated);
+  font-size: 5vh;
+}
