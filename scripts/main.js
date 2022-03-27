@@ -62,7 +62,9 @@
         (account, index) =>
           `<li class="nicknamesList__nickname${
             index === 0 ? " nicknamesList__nickname--active" : ""
-          }">${account}</li>`,
+          }">${
+            typeof account === "string" ? account : account.join(", ")
+          }</li>`,
       )
       .join("\n");
 
@@ -86,7 +88,25 @@
     .querySelector("#input-accounts")
     .addEventListener("input", (event) => {
       accounts = getAccounts();
-
       updateNavigationList(accounts);
     });
+
+  document
+    .querySelector("#algorithm-option-oneByOne")
+    .addEventListener("change", () => {
+      accounts = getAccounts();
+      updateNavigationList(accounts);
+    });
+
+  document
+    .querySelector("#algorithm-option-bundle")
+    .addEventListener("change", () => {
+      accounts = getAccounts();
+      updateNavigationList(accounts);
+    });
+
+  document.querySelector("#input-rawMessage").addEventListener("input", () => {
+    accounts = getAccounts();
+    updateNavigationList(accounts);
+  });
 })();
