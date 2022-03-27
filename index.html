@@ -93,6 +93,7 @@
     <link rel="stylesheet" href="./styles/output.css" />
     <link rel="stylesheet" href="./styles/nicknamesList.css" />
     <link rel="stylesheet" href="./styles/button.css" />
+    <link rel="stylesheet" href="./styles/alert.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
   </head>
   <body class="body">
@@ -104,7 +105,11 @@
           class="top__logo"
         />
       </a>
-      <h1 class="top__title"><a href="https://t.me/+fWGCU2JGfCk3ODI6" target="_blank">Інфо-Допомагайка</a></h1>
+      <h1 class="top__title">
+        <a href="https://t.me/+fWGCU2JGfCk3ODI6" target="_blank"
+          >Інфо-Допомагайка</a
+        >
+      </h1>
     </header>
 
     <article class="howToUse body__howToUse" id="howToUse-wrapper">
@@ -122,12 +127,13 @@
       </button>
 
       <p class="howToUse__content" id="howToUse-content">
-        1. Відкриваєш <a href="https://t.me/+fWGCU2JGfCk3ODI6" target="_blank">чат</a> <br />2. Копіюєш список телеграм чи інстаграм
-        аккаунтів і вставляєш в форму нижче <br />3. Копіюєш або пишеш власне
-        повідомлення і вставляєш нижче <br />&nbsp;* постав
-        <code>\\nickname\\</code> на місці де хочеш щоб вставились нікнейми
-        <br />4. Внизу генерується повідомлення з аккаунтом <br />5. Копіюєш,
-        створюєш твіт
+        1. Відкриваєш
+        <a href="https://t.me/+fWGCU2JGfCk3ODI6" target="_blank">чат</a>
+        <br />2. Копіюєш список телеграм чи інстаграм аккаунтів і вставляєш в
+        форму нижче <br />3. Копіюєш або пишеш власне повідомлення і вставляєш
+        нижче <br />&nbsp;* постав <code>\\nickname\\</code> на місці де хочеш
+        щоб вставились нікнейми <br />4. Внизу генерується повідомлення з
+        аккаунтом <br />5. Копіюєш, створюєш твіт
         <br />
         І так по колу
         <br />
@@ -150,7 +156,22 @@
           cols="30"
           rows="10"
           placeholder="Встав список аккаунтів"
-        ></textarea>
+        >
+https://twitter.com/Goldman44
+https://twitter.com/PressSec44
+https://twitter.com/vj44
+https://twitter.com/Simas44
+https://twitter.com/VP45
+https://twitter.com/VP44
+https://twitter.com/FLOTUS44
+https://twitter.com/ObamaWhiteHouse
+https://twitter.com/WhiteHouse45
+https://twitter.com/BarackObama
+https://twitter.com/WhiteHouse45
+https://twitter.com/SpeakerPelosi
+https://twitter.com/AmbassadorRice
+https://twitter.com/ObamaFoundation</textarea
+        >
       </div>
 
       <div class="textaria input__message">
@@ -162,7 +183,7 @@
           cols="30"
           rows="10"
           placeholder="Встав шаблон повідомлення"
-        ></textarea>
+        >Hello, \\nickname\\, how are you?</textarea>
       </div>
 
       <form class="algorithm input__algorithm">
@@ -196,15 +217,21 @@
     <hr style="max-width: 600px" />
 
     <article class="output body__output">
-      <ul class="nicknamesList output__nicknamesList" data-active-index="0" id="nicknamesList">
-        <li class="nicknamesList__nickname nicknamesList__nickname--active"></li>
+      <ul
+        class="nicknamesList output__nicknamesList"
+        data-active-index="0"
+        id="nicknamesList"
+      >
+        <li
+          class="nicknamesList__nickname nicknamesList__nickname--active"
+        ></li>
       </ul>
 
       <div class="textaria output__readyMessage">
         <textarea
           class="textaria__textaria"
           name="accounts"
-          id="input-accounts"
+          id="output-compiledMessage"
           cols="30"
           rows="10"
           placeholder="Щоб заново згенерувати нажми &#34;генерувати наступне&#34;, потім &#34;генерувати попереднє&#34; :)"
@@ -212,22 +239,30 @@
       </div>
 
       <div class="output__buttons output__buttons--top">
-        <button class="button output__button">← Генерувати поп.</button>
-        <button class="button output__button">Генерувати наст. →</button>
+        <button class="button output__button" disabled id="outbuton-buttonPrev">← Генерувати поп.</button>
+        <button class="button output__button" id="outbuton-buttonNext">Генерувати наст. →</button>
       </div>
       <div class="output__buttons output__buttons--bottom">
-        <button class="button output__button">Копіювати</button>
-        <button class="button button--main output__button">
+        <button class="button output__button" id="outbuton-copy">Копіювати</button>
+        <button class="button button--main output__button" id="outbuton-nextAndBody">
           Копіювати і генерувати наступне
         </button>
       </div>
     </article>
 
+    <div class="alert alert-visible" id="alert"></div>
+
     <footer class="footer body__footer">
-      Зробила <a href="https://sokyra.party/uk/page/10" target="_blank">Демократична Сокира</a> з 💙💛<br/>Слава Україні!
+      Зробила
+      <a href="https://sokyra.party/uk/page/10" target="_blank"
+        >Демократична Сокира</a
+      >
+      з 💙💛<br />Слава Україні!
     </footer>
 
+    <script src="./scripts/alert.js"></script>
     <script src="./scripts/howToUse.js"></script>
+    <script src="./scripts/copyToClipboard.js"></script>
     <script src="./scripts/main.js"></script>
   </body>
 </html>

@@ -55,6 +55,9 @@
     }
   };
 
+  const accountToString = (account) =>
+    typeof account === "string" ? account : account.join(", ");
+
   const generateHTMLforNicknamesList = (accounts, startIndex) =>
     accounts
       .slice(startIndex, startIndex + 5)
@@ -62,9 +65,7 @@
         (account, index) =>
           `<li class="nicknamesList__nickname${
             index === 0 ? " nicknamesList__nickname--active" : ""
-          }">${
-            typeof account === "string" ? account : account.join(", ")
-          }</li>`,
+          }">${accountToString(account)}</li>`,
       )
       .join("\n");
 
@@ -82,31 +83,119 @@
     document.querySelector("#nicknamesList").innerHTML = htmlForList;
   };
 
+  const generateNewMessage = (account) => {
+    const template = document.querySelector("#input-rawMessage").value;
+
+    return template.split("\\\\nickname\\\\").join(accountToString(account));
+  };
+
+  const updateMessage = (newValue) =>
+    (document.querySelector("#output-compiledMessage").value = newValue);
+
   let accounts = getAccounts();
+
+  const updateEverything = () => {
+    accounts = getAccounts();
+    const startIndex = getStartIndex(accounts.length);
+    const currentAccount = accounts[startIndex];
+    const message = generateNewMessage(currentAccount);
+
+    updateMessage(message);
+    updateNavigationList(accounts);
+  };
+
+  const updatePrevButton = (currentIndex) => {
+    const buttonPrev = document.querySelector("#outbuton-buttonPrev");
+    if (currentIndex === 0) {
+      buttonPrev.disabled = true;
+    } else {
+      buttonPrev.disabled = false;
+    }
+  };
+
+  const updateNextButton = (currentIndex) => {
+    const buttonNext = document.querySelector("#outbuton-buttonNext");
+    if (currentIndex >= accounts.length) {
+      buttonNext.disabled = true;
+    } else {
+      buttonNext.disabled = false;
+    }
+  };
+
+  const increaseStartIndex = () => {
+    const index = 1 + getStartIndex(accounts.length);
+
+    if (index > accounts.length) {
+      return;
+    }
+
+    document.querySelector("#nicknamesList").dataset.activeIndex = index;
+
+    updatePrevButton(index);
+    updateNextButton(index);
+    updateEverything();
+  };
+
+  const decreaseStartIndex = () => {
+    const index = getStartIndex(accounts.length) - 1;
+
+    document.querySelector("#nicknamesList").dataset.activeIndex = index;
+
+    updatePrevButton(index);
+    updateNextButton(index);
+    updateEverything();
+  };
+
+  const copy = () => {
+    const text = document.querySelector("#output-compiledMessage").value;
+
+    if (window.copyToClipboard(text)) {
+      alert("✅ Copied", 70);
+    } else {
+      alert(
+        "❌ Something went wrong <br/>Please use another browser or copy text by hand",
+        2500,
+      );
+    }
+  };
+
+  updateEverything();
 
   document
     .querySelector("#input-accounts")
-    .addEventListener("input", (event) => {
-      accounts = getAccounts();
-      updateNavigationList(accounts);
-    });
+    .addEventListener("input", updateEverything);
 
   document
     .querySelector("#algorithm-option-oneByOne")
-    .addEventListener("change", () => {
-      accounts = getAccounts();
-      updateNavigationList(accounts);
-    });
+    .addEventListener("change", updateEverything);
 
   document
     .querySelector("#algorithm-option-bundle")
-    .addEventListener("change", () => {
-      accounts = getAccounts();
-      updateNavigationList(accounts);
+    .addEventListener("change", updateEverything);
+
+  document
+    .querySelector("#input-rawMessage")
+    .addEventListener("input", updateEverything);
+
+  document
+    .querySelector("#outbuton-buttonNext")
+    .addEventListener("click", increaseStartIndex);
+
+  document
+    .querySelector("#outbuton-buttonPrev")
+    .addEventListener("click", () => {
+      if (!document.querySelector("#outbuton-buttonPrev").disabled) {
+        decreaseStartIndex();
+      }
     });
 
-  document.querySelector("#input-rawMessage").addEventListener("input", () => {
-    accounts = getAccounts();
-    updateNavigationList(accounts);
-  });
+  document.querySelector("#outbuton-copy").addEventListener("click", copy);
+
+  document
+    .querySelector("#outbuton-nextAndBody")
+    .addEventListener("click", () => {
+      copy();
+
+      increaseStartIndex();
+    });
 })();

@@ -1,0 +1,16 @@
+.alert {
+  display: none;
+  opacity: 0;
+
+  z-index: 10;
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  max-width: 80vw;
+  padding: 20px;
+  background: var(--color-light-monochrome);
+  border: 1px solid var(--color-dark-saturated);
+  transition-property: opacity;
+  transition-duration: 20ms;
+  transition-timing-function: linear;
+}
